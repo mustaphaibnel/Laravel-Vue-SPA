@@ -11,11 +11,14 @@ window.Vue = require('vue');
 
 import Vuetify from 'vuetify'
 import router from './router'
-
+import App from './components/vuetify/App'
 Vue.use(Vuetify);
 
 const app = new Vue({
     el: '#app',
+    components: {
+        'app': App
+    },
     data () {
         return {
 
