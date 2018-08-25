@@ -9,20 +9,25 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import Vuetify from 'vuetify'
-import router from './router'
-import App from './components/vuetify/App'
-Vue.use(Vuetify);
+//import router from './router'
+import App from './components/App'
+
+import store from './store/index'
+import {currency} from "./currency";
+
+
+Vue.filter('currency', currency)
 
 const app = new Vue({
     el: '#app',
-    components: {
-        'app': App
+    components:{
+        'app':App
     },
     data () {
         return {
 
         }
     },
-    router,
+    //router,
+    store,
 });
